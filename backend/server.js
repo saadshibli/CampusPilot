@@ -30,7 +30,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Database connection
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/campus-copilot')
+mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://campus-copilot-user:pdDIRGSddqFR0YwL@cluster0.hqe0hrq.mongodb.net/campus_copilot?retryWrites=true&w=majority&appName=Cluster0')
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('MongoDB connection error:', err));
 
