@@ -277,3 +277,25 @@ For support or questions:
 ---
 
 **Built with ❤️ for students by students** 
+
+# Deployment Instructions
+
+## Frontend (Vercel)
+1. Push your code to GitHub.
+2. Go to [Vercel](https://vercel.com/) and import your repo.
+3. Set the project root to `frontend`.
+4. Set the build command to `npm run build` and output directory to `dist` (auto-detected).
+5. Add an environment variable `VITE_BACKEND_URL` with the URL of your deployed backend (from Render).
+6. Deploy!
+
+## Backend (Render)
+1. Push your backend code to GitHub.
+2. Go to [Render](https://render.com/) and create a new Web Service.
+3. Connect your repo and select the `backend` directory.
+4. Set the build command to `npm install` and start command to `npm start`.
+5. Add any required environment variables (e.g., database URIs).
+6. Deploy!
+
+## Connecting Frontend and Backend
+- In Vercel, set `VITE_BACKEND_URL` to your Render backend's public URL (e.g., `https://campus-pilot-backend.onrender.com/api`).
+- The frontend will use this for all API requests. 
