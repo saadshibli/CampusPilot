@@ -3,7 +3,7 @@ services:
   - type: web
     name: campus-copilot-backend
     env: node
-    plan: free
+    plan: starter
     buildCommand: cd backend && npm install
     startCommand: cd backend && npm start
     envVars:
