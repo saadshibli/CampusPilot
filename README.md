@@ -299,3 +299,25 @@ For support or questions:
 ## Connecting Frontend and Backend
 - In Vercel, set `VITE_BACKEND_URL` to your Render backend's public URL (e.g., `https://campus-pilot-backend.onrender.com/api`).
 - The frontend will use this for all API requests. 
+
+# Troubleshooting Vercel Deployment
+
+## Peer Dependency Error (lucide-react / react)
+If you see an error like this during Vercel build:
+
+```
+npm error   peer react@"^16.5.1 || ^17.0.0 || ^18.0.0" from lucide-react@0.294.0
+...
+Error: Command "npm install" exited with 1
+```
+
+**Solution:**
+1. Go to your Vercel project dashboard.
+2. Navigate to **Settings → Build & Development Settings**.
+3. Set the **Install Command** to:
+   ```
+   npm install --legacy-peer-deps
+   ```
+4. Save and redeploy your project.
+
+This will allow the build to proceed by ignoring peer dependency conflicts. 
